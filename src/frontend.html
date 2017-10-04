@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>coverage-timeline</title>
+    <style media="screen">
+      body {font-family: sans-serif;}
+      #remove {float:right}
+    </style>
+  </head>
+  <body>
+    <button id="remove">uninstall</button>
+    <h1>Coverage timeline</h1>
+    <h3>todo: stuff here</h3>
+
+
+    <script>
+
+      remove.addEventListener('click', async () => {
+        (await navigator.serviceWorker.getRegistrations())
+          .forEach(registration =>
+            registration.unregister()
+          )
+
+        remove.remove()
+
+      }, false)
+
+    </script>
+  </body>
+</html>
