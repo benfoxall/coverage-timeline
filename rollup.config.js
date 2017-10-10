@@ -1,5 +1,8 @@
 import string from 'rollup-plugin-string'
 import buble from 'rollup-plugin-buble'
+import resolve from 'rollup-plugin-node-resolve'
+import nodeResolve from 'rollup-plugin-node-resolve'
+import commonjs from 'rollup-plugin-commonjs'
 
 export default {
 	input: 'src/main.js',
@@ -8,6 +11,12 @@ export default {
 		format: 'iife'
 	},
 	plugins: [
+		resolve(),
+		commonjs({
+			namedExports: {
+		    'esprima': [ 'parseScript' ]
+		  }
+		}),
 		string({
 			include: '**/*.html'
 		}),
