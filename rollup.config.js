@@ -1,5 +1,5 @@
 import string from 'rollup-plugin-string'
-import buble from 'rollup-plugin-buble'
+//import buble from 'rollup-plugin-buble'
 import resolve from 'rollup-plugin-node-resolve'
 import nodeResolve from 'rollup-plugin-node-resolve'
 import commonjs from 'rollup-plugin-commonjs'
@@ -20,6 +20,6 @@ export default {
 		string({
 			include: '**/*.html'
 		}),
-		buble()
+		// buble() // async functions break stuff
 	]
 }
